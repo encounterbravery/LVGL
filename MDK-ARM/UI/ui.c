@@ -39,3 +39,14 @@ ui_Screen1_screen_init();
 ui____initial_actions0 = lv_obj_create(NULL);
 lv_disp_load_scr( ui_Screen1);
 }
+
+void ui_refresh(void)
+{
+	//电压值
+	extern float voltage;
+
+	//加的线条
+	lv_chart_series_t *ser1 = lv_chart_add_series(ui_Chart1, lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+	refresh_data(ui_Chart1,ser1,voltage);
+	
+}

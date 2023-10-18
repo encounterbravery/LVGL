@@ -35,3 +35,12 @@ lv_obj_set_y( ui_Label1, 66 );
 lv_obj_set_align( ui_Label1, LV_ALIGN_CENTER );
 
 }
+
+
+//更新chart的数据
+void refresh_data(lv_obj_t* chart, lv_chart_series_t *series, float data)
+{
+		lv_chart_set_next_value(chart,series,data);
+		lv_chart_set_next_value(chart,series,data);
+		lv_chart_refresh(chart);
+}

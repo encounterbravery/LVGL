@@ -50,8 +50,13 @@ uint16_t color=0x001f;
 uint16_t LCD_DISP_BUF0[480*272]={0};
 
 //ADC
+uint16_t adc_buffer[10];
+uint16_t adc_value;
+float voltage;
 
-
+//chart
+extern lv_obj_t *ui_Chart1;
+extern lv_obj_t *ui_Label1;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -68,16 +73,26 @@ uint16_t LCD_DISP_BUF0[480*272]={0};
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 //static void MPU_Config(void);
+
+void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
+{
+
+		adc_value = HAL_ADC_GetValue(&hadc3);//重要！！！！！adc_value要全局定义
+		voltage = adc_value / 4096.0 * 3.3 ;
+//		printf("%d",adc_value);
+}
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 //int fputc(int ch,FILE *f)
 //{
 //    return ITM_SendChar(ch);
 //}
+
 /* USER CODE END 0 */
 
 /**
@@ -113,11 +128,13 @@ int main(void)
   MX_TIM2_Init();
   MX_LTDC_Init();
   /* USER CODE BEGIN 2 */
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
+	HAL_ADC_Start_DMA(&hadc3, (uint32_t*) adc_buffer,10);
+	
   lv_init();
   lv_port_disp_init();
 	ui_init();
-	
-	
+
 	
 //	lv_demo_widgets();
 //	lv_demo_benchmark();
@@ -131,7 +148,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		    lv_task_handler();
+		HAL_Delay(1);
+		lv_task_handler();
+		ui_refresh();
   }
   /* USER CODE END 3 */
 }

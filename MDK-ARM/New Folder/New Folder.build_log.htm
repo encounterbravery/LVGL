@@ -21,30 +21,17 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-E:\Repository\LVGL\MDK-ARM\New Folder.uvprojx
+E:\Repository\MDK-ARM\New Folder.uvprojx
 Project File Date:  10/18/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\software\kevil5\kevil MDK-ARM v5.31\ARM\ARMCC\Bin'
 Build target 'New Folder'
-compiling ui.c...
 compiling ui_Screen1.c...
-compiling ui_helpers.c...
-UI\ui_helpers.c(75): warning:  #188-D: enumerated type mixed with another type
-     lv_bar_set_value(target, old+val, anm);
-UI\ui_helpers.c(81): warning:  #188-D: enumerated type mixed with another type
-     lv_slider_set_value(target, old+val, anm);
-UI\ui_helpers.c: 2 warnings, 0 errors
-compiling main.c...
-../Core/Src/main.c(118): warning:  #223-D: function "ui_int" declared implicitly
-  	ui_int();
-../Core/Src/main.c: 1 warning, 0 errors
 linking...
-New Folder\New Folder.axf: Error: L6218E: Undefined symbol ui_int (referred from main.o).
-Not enough information to list image symbols.
-Not enough information to list load addresses in the image map.
-Finished: 2 information, 0 warning and 1 error messages.
-"New Folder\New Folder.axf" - 1 Error(s), 3 Warning(s).
+Program Size: Code=152678 RO-data=18586 RW-data=572 ZI-data=317252  
+FromELF: creating hex file...
+"New Folder\New Folder.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -84,176 +71,175 @@ Package Vendor: Keil
       Include file:  CMSIS\Core\Include\tz_context.h
 
    * Component: LVGL.LVGL::LVGL:lvgl:Benchmark:8.3.0
-      Source file:   demos\benchmark\assets\img_benchmark_cogwheel_rgb.c
-      Source file:   demos\benchmark\assets\lv_font_bechmark_montserrat_28_compr_az.c.c
-      Include file:  demos\benchmark\lv_demo_benchmark.h
-      Source file:   demos\benchmark\assets\img_benchmark_cogwheel_alpha16.c
-      Source file:   demos\benchmark\assets\img_benchmark_cogwheel_rgb565a8.c
-      Source file:   demos\benchmark\assets\lv_font_bechmark_montserrat_12_compr_az.c.c
       Source file:   demos\benchmark\lv_demo_benchmark.c
-      Source file:   demos\benchmark\assets\lv_font_bechmark_montserrat_16_compr_az.c.c
       Source file:   demos\benchmark\assets\img_benchmark_cogwheel_argb.c
       Source file:   demos\benchmark\assets\img_benchmark_cogwheel_indexed16.c
       Source file:   demos\benchmark\assets\img_benchmark_cogwheel_chroma_keyed.c
+      Include file:  demos\benchmark\lv_demo_benchmark.h
+      Source file:   demos\benchmark\assets\img_benchmark_cogwheel_alpha16.c
+      Source file:   demos\benchmark\assets\img_benchmark_cogwheel_rgb.c
+      Source file:   demos\benchmark\assets\lv_font_bechmark_montserrat_28_compr_az.c.c
+      Source file:   demos\benchmark\assets\lv_font_bechmark_montserrat_16_compr_az.c.c
+      Source file:   demos\benchmark\assets\img_benchmark_cogwheel_rgb565a8.c
+      Source file:   demos\benchmark\assets\lv_font_bechmark_montserrat_12_compr_az.c.c
 
    * Component: LVGL.LVGL::LVGL:lvgl:Demo:Widgets:8.3.0
-      Source file:   demos\widgets\assets\img_lvgl_logo.c
-      Source file:   demos\widgets\lv_demo_widgets.c
-      Include file:  demos\widgets\lv_demo_widgets.h
-      Source file:   demos\widgets\assets\img_clothes.c
       Source file:   demos\widgets\assets\img_demo_widgets_avatar.c
+      Source file:   demos\widgets\assets\img_clothes.c
+      Source file:   demos\widgets\lv_demo_widgets.c
+      Source file:   demos\widgets\assets\img_lvgl_logo.c
+      Include file:  demos\widgets\lv_demo_widgets.h
 
    * Component: LVGL.LVGL::LVGL:lvgl:Essential:8.3.0
-      Source file:   src\draw\lv_draw.c
-      Source file:   src\draw\lv_draw_arc.c
-      Source file:   src\draw\lv_draw_img.c
-      Source file:   src\draw\lv_draw_label.c
-      Source file:   src\core\lv_group.c
-      Source file:   src\core\lv_obj_scroll.c
+      Source file:   src\core\lv_disp.c
       Source file:   src\core\lv_event.c
       Source file:   src\core\lv_indev.c
-      Source file:   src\core\lv_disp.c
-      Source file:   src\core\lv_obj.c
-      Source file:   src\core\lv_obj_draw.c
-      Source file:   src\core\lv_obj_style.c
-      Source file:   src\core\lv_obj_style_gen.c
       Source file:   src\core\lv_indev_scroll.c
+      Source file:   src\core\lv_group.c
+      Source file:   src\core\lv_obj.c
       Source file:   src\core\lv_obj_class.c
-      Source file:   src\core\lv_obj_pos.c
-      Source file:   src\core\lv_obj_tree.c
-      Source file:   src\core\lv_refr.c
-      Source file:   src\core\lv_theme.c
-      Source file:   src\draw\lv_draw_line.c
-      Source file:   src\draw\lv_draw_triangle.c
-      Source file:   src\draw\sw\lv_draw_sw_layer.c
-      Source file:   src\font\lv_font_montserrat_12_subpx.c
-      Source file:   src\draw\sw\lv_draw_sw_blend.c
-      Source file:   src\draw\sw\lv_draw_sw_line.c
-      Source file:   src\font\lv_font_fmt_txt.c
-      Source file:   src\font\lv_font_montserrat_10.c
-      Source file:   src\font\lv_font_montserrat_8.c
-      Source file:   src\font\lv_font_montserrat_12.c
-      Source file:   src\font\lv_font_montserrat_14.c
-      Source file:   src\font\lv_font_montserrat_16.c
-      Source file:   src\font\lv_font_montserrat_18.c
-      Source file:   src\draw\sw\lv_draw_sw_dither.c
-      Source file:   src\draw\lv_draw_rect.c
-      Source file:   src\draw\sw\lv_draw_sw_letter.c
-      Source file:   src\draw\sw\lv_draw_sw_transform.c
-      Source file:   src\draw\lv_draw_layer.c
-      Source file:   src\font\lv_font.c
-      Source file:   src\draw\sw\lv_draw_sw.c
-      Source file:   src\draw\lv_draw_mask.c
-      Source file:   src\draw\sw\lv_draw_sw_img.c
-      Source file:   src\draw\lv_img_decoder.c
       Source file:   src\draw\sw\lv_draw_sw_gradient.c
-      Source file:   src\draw\sw\lv_draw_sw_polygon.c
       Source file:   src\draw\lv_img_cache.c
-      Source file:   src\draw\sw\lv_draw_sw_arc.c
-      Source file:   src\font\lv_font_dejavu_16_persian_hebrew.c
-      Source file:   src\draw\sw\lv_draw_sw_rect.c
+      Source file:   src\draw\lv_draw_img.c
+      Source file:   src\core\lv_theme.c
+      Source file:   src\draw\lv_draw_arc.c
+      Source file:   src\draw\lv_draw_line.c
       Source file:   src\draw\lv_draw_transform.c
-      Source file:   src\font\lv_font_loader.c
+      Source file:   src\draw\sw\lv_draw_sw_img.c
+      Source file:   src\draw\lv_draw.c
+      Source file:   src\core\lv_obj_draw.c
+      Source file:   src\draw\lv_draw_rect.c
+      Source file:   src\draw\lv_draw_triangle.c
+      Source file:   src\draw\lv_img_decoder.c
+      Source file:   src\draw\sw\lv_draw_sw_arc.c
       Source file:   src\draw\lv_img_buf.c
-      Source file:   src\misc\lv_gc.c
-      Source file:   src\misc\lv_log.c
-      Source file:   src\misc\lv_async.c
-      Source file:   src\misc\lv_bidi.c
-      Source file:   src\font\lv_font_montserrat_44.c
-      Source file:   src\hal\lv_hal_indev.c
-      Source file:   src\font\lv_font_montserrat_28.c
-      Source file:   src\font\lv_font_montserrat_24.c
-      Source file:   src\font\lv_font_montserrat_28_compressed.c
-      Source file:   src\font\lv_font_montserrat_36.c
-      Source file:   src\font\lv_font_montserrat_48.c
-      Source file:   src\font\lv_font_montserrat_30.c
-      Source file:   src\font\lv_font_unscii_16.c
-      Source file:   src\hal\lv_hal_tick.c
-      Source file:   src\misc\lv_area.c
-      Source file:   src\misc\lv_color.c
-      Source file:   src\misc\lv_fs.c
-      Source file:   src\font\lv_font_montserrat_26.c
-      Source file:   src\misc\lv_ll.c
+      Source file:   src\draw\sw\lv_draw_sw_layer.c
+      Source file:   src\draw\lv_draw_label.c
+      Source file:   src\core\lv_obj_scroll.c
+      Source file:   src\draw\sw\lv_draw_sw_letter.c
+      Source file:   src\draw\sw\lv_draw_sw_line.c
+      Source file:   src\draw\sw\lv_draw_sw_polygon.c
+      Source file:   src\draw\sw\lv_draw_sw_rect.c
+      Source file:   src\core\lv_refr.c
+      Source file:   src\core\lv_obj_pos.c
+      Source file:   src\core\lv_obj_style.c
+      Source file:   src\draw\lv_draw_layer.c
+      Source file:   src\core\lv_obj_style_gen.c
+      Source file:   src\draw\sw\lv_draw_sw_blend.c
+      Source file:   src\draw\lv_draw_mask.c
+      Source file:   src\core\lv_obj_tree.c
+      Source file:   src\draw\sw\lv_draw_sw_dither.c
+      Source file:   src\draw\sw\lv_draw_sw.c
+      Source file:   src\font\lv_font_loader.c
       Source file:   src\font\lv_font_montserrat_22.c
-      Source file:   src\font\lv_font_montserrat_38.c
+      Source file:   src\font\lv_font_montserrat_18.c
+      Source file:   src\font\lv_font_montserrat_24.c
       Source file:   src\font\lv_font_montserrat_32.c
-      Source file:   src\font\lv_font_simsun_16_cjk.c
-      Source file:   src\font\lv_font_montserrat_20.c
-      Source file:   src\font\lv_font_unscii_8.c
+      Source file:   src\font\lv_font_montserrat_34.c
+      Source file:   src\font\lv_font_montserrat_38.c
       Source file:   src\font\lv_font_montserrat_42.c
+      Source file:   src\font\lv_font_montserrat_28_compressed.c
+      Source file:   src\font\lv_font_montserrat_46.c
+      Source file:   src\font\lv_font_simsun_16_cjk.c
+      Source file:   src\font\lv_font_montserrat_12.c
+      Source file:   src\font\lv_font_montserrat_12_subpx.c
+      Source file:   src\font\lv_font_montserrat_16.c
+      Source file:   src\font\lv_font_montserrat_30.c
+      Source file:   src\font\lv_font_montserrat_36.c
+      Source file:   src\font\lv_font.c
+      Source file:   src\font\lv_font_unscii_8.c
+      Source file:   src\font\lv_font_unscii_16.c
+      Source file:   src\font\lv_font_dejavu_16_persian_hebrew.c
       Source file:   src\font\lv_font_montserrat_40.c
       Source file:   src\hal\lv_hal_disp.c
-      Source file:   src\font\lv_font_montserrat_46.c
-      Source file:   src\misc\lv_anim.c
-      Source file:   src\font\lv_font_montserrat_34.c
-      Source file:   src\misc\lv_anim_timeline.c
-      Include file:  lvgl.h
-      Source file:   src\misc\lv_lru.c
+      Source file:   src\font\lv_font_montserrat_44.c
+      Source file:   src\font\lv_font_montserrat_26.c
+      Source file:   src\font\lv_font_montserrat_28.c
+      Source file:   src\draw\sw\lv_draw_sw_transform.c
+      Source file:   src\font\lv_font_montserrat_48.c
+      Source file:   src\font\lv_font_montserrat_10.c
+      Source file:   src\font\lv_font_fmt_txt.c
+      Source file:   src\font\lv_font_montserrat_14.c
+      Source file:   src\font\lv_font_montserrat_8.c
+      Source file:   src\font\lv_font_montserrat_20.c
+      Source file:   src\misc\lv_math.c
+      Source file:   src\misc\lv_fs.c
       Source file:   src\misc\lv_mem.c
-      Source file:   src\misc\lv_templ.c
-      Source file:   src\widgets\lv_arc.c
-      Source file:   src\widgets\lv_btnmatrix.c
-      Source file:   src\misc\lv_style.c
-      Source file:   src\widgets\lv_switch.c
+      Source file:   src\misc\lv_tlsf.c
+      Source file:   src\misc\lv_utils.c
       Source file:   src\misc\lv_txt.c
-      Source file:   src\widgets\lv_img.c
-      Source file:   src\misc\lv_timer.c
+      Source file:   src\misc\lv_bidi.c
+      Source file:   src\misc\lv_ll.c
+      Source file:   src\hal\lv_hal_tick.c
+      Source file:   src\misc\lv_async.c
+      Source file:   src\widgets\lv_arc.c
       Source file:   src\widgets\lv_bar.c
-      Source file:   src\widgets\lv_line.c
-      Source file:   src\widgets\lv_canvas.c
-      Source file:   src\misc\lv_printf.c
-      Source file:   src\widgets\lv_roller.c
-      Source file:   src\widgets\lv_slider.c
+      Source file:   src\widgets\lv_btnmatrix.c
+      Source file:   src\widgets\lv_btn.c
+      Source file:   src\misc\lv_templ.c
       Source file:   src\misc\lv_txt_ap.c
-      Source file:   src\misc\lv_style_gen.c
+      Source file:   src\misc\lv_area.c
+      Source file:   src\misc\lv_log.c
+      Source file:   src\misc\lv_lru.c
+      Source file:   src\widgets\lv_canvas.c
       Source file:   src\widgets\lv_checkbox.c
       Source file:   src\widgets\lv_dropdown.c
-      Source file:   src\widgets\lv_label.c
-      Source file:   src\widgets\lv_table.c
+      Source file:   src\hal\lv_hal_indev.c
+      Source file:   src\misc\lv_gc.c
+      Source file:   src\misc\lv_anim.c
+      Source file:   src\misc\lv_anim_timeline.c
+      Source file:   src\misc\lv_printf.c
+      Source file:   src\widgets\lv_img.c
+      Source file:   src\misc\lv_color.c
+      Source file:   src\misc\lv_style_gen.c
+      Source file:   src\misc\lv_style.c
+      Source file:   src\misc\lv_timer.c
+      Source file:   src\widgets\lv_slider.c
       Source file:   src\widgets\lv_textarea.c
-      Source file:   src\widgets\lv_objx_templ.c
-      Source file:   src\misc\lv_utils.c
-      Source file:   src\misc\lv_math.c
-      Source file:   src\misc\lv_tlsf.c
-      Source file:   src\widgets\lv_btn.c
+      Source file:   src\widgets\lv_roller.c
+      Source file:   src\widgets\lv_line.c
       Source file:   lv_cmsis_pack.c
+      Source file:   src\widgets\lv_objx_templ.c
+      Include file:  lvgl.h
+      Source file:   src\widgets\lv_table.c
+      Source file:   src\widgets\lv_label.c
+      Source file:   src\widgets\lv_switch.c
 
    * Component: LVGL.LVGL::LVGL:lvgl:Extra Themes:8.3.0
-      Source file:   src\extra\themes\default\lv_theme_default.c
-      Source file:   src\extra\themes\basic\lv_theme_basic.c
-      Source file:   src\extra\themes\mono\lv_theme_mono.c
-      Source file:   src\extra\lv_extra.c
-      Source file:   src\extra\widgets\animimg\lv_animimg.c
-      Source file:   src\extra\widgets\calendar\lv_calendar.c
-      Source file:   src\extra\widgets\colorwheel\lv_colorwheel.c
-      Source file:   src\extra\widgets\led\lv_led.c
-      Source file:   src\extra\widgets\tabview\lv_tabview.c
-      Source file:   src\extra\widgets\keyboard\lv_keyboard.c
-      Source file:   src\extra\widgets\tileview\lv_tileview.c
-      Source file:   src\extra\widgets\list\lv_list.c
-      Source file:   src\extra\widgets\calendar\lv_calendar_header_dropdown.c
-      Source file:   src\extra\widgets\msgbox\lv_msgbox.c
-      Source file:   src\extra\widgets\spinbox\lv_spinbox.c
-      Source file:   src\extra\widgets\span\lv_span.c
-      Source file:   src\extra\widgets\calendar\lv_calendar_header_arrow.c
-      Source file:   src\extra\widgets\win\lv_win.c
-      Source file:   src\extra\widgets\meter\lv_meter.c
-      Source file:   src\extra\layouts\flex\lv_flex.c
       Source file:   src\extra\widgets\menu\lv_menu.c
-      Source file:   src\extra\widgets\spinner\lv_spinner.c
+      Source file:   src\extra\widgets\meter\lv_meter.c
+      Source file:   src\extra\widgets\msgbox\lv_msgbox.c
+      Source file:   src\extra\widgets\tileview\lv_tileview.c
+      Source file:   src\extra\layouts\flex\lv_flex.c
+      Source file:   src\extra\widgets\win\lv_win.c
+      Source file:   src\extra\widgets\calendar\lv_calendar_header_arrow.c
+      Source file:   src\extra\widgets\calendar\lv_calendar_header_dropdown.c
+      Source file:   src\extra\widgets\calendar\lv_calendar.c
+      Source file:   src\extra\widgets\animimg\lv_animimg.c
+      Source file:   src\extra\widgets\keyboard\lv_keyboard.c
+      Source file:   src\extra\widgets\spinbox\lv_spinbox.c
       Source file:   src\extra\layouts\grid\lv_grid.c
-      Source file:   src\extra\widgets\imgbtn\lv_imgbtn.c
+      Source file:   src\extra\lv_extra.c
+      Source file:   src\extra\widgets\list\lv_list.c
+      Source file:   src\extra\themes\mono\lv_theme_mono.c
+      Source file:   src\extra\widgets\spinner\lv_spinner.c
+      Source file:   src\extra\themes\basic\lv_theme_basic.c
+      Source file:   src\extra\themes\default\lv_theme_default.c
+      Source file:   src\extra\widgets\colorwheel\lv_colorwheel.c
       Source file:   src\extra\widgets\chart\lv_chart.c
+      Source file:   src\extra\widgets\span\lv_span.c
+      Source file:   src\extra\widgets\tabview\lv_tabview.c
+      Source file:   src\extra\widgets\led\lv_led.c
+      Source file:   src\extra\widgets\imgbtn\lv_imgbtn.c
 
    * Component: LVGL.LVGL::LVGL:lvgl:Porting:8.3.0
-      Include file:  examples\porting\lv_port_fs_template.h
-      Source file:   examples\porting\lv_port_indev_template.c
-      Include file:  examples\porting\lv_port_disp_template.h
-      Source file:   examples\porting\lv_port_fs_template.c
-      Include file:  examples\porting\lv_port_indev_template.h
       Source file:   examples\porting\lv_port_disp_template.c
-Target not created.
-Build Time Elapsed:  00:00:06
+      Include file:  examples\porting\lv_port_disp_template.h
+      Source file:   examples\porting\lv_port_indev_template.c
+      Include file:  examples\porting\lv_port_indev_template.h
+      Include file:  examples\porting\lv_port_fs_template.h
+      Source file:   examples\porting\lv_port_fs_template.c
+Build Time Elapsed:  00:00:07
 </pre>
 </body>
 </html>
