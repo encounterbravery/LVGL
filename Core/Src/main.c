@@ -31,6 +31,11 @@
 #include "lv_demo_widgets.h"
 #include "lv_demo_benchmark.h"
 #include "stdio.h"
+
+#include "ui.h"
+#include "ui_helpers.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +48,10 @@
 //定义变量
 uint16_t color=0x001f;
 uint16_t LCD_DISP_BUF0[480*272]={0};
-//uint32_t tim_cnt=0;
+
+//ADC
+
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -107,9 +115,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
   lv_init();
   lv_port_disp_init();
-	lv_demo_widgets();
+	ui_init();
+	
+	
+	
+//	lv_demo_widgets();
 //	lv_demo_benchmark();
-//  lv_demo_benchmark();	
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */

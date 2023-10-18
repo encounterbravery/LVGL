@@ -176,3 +176,7 @@ new folder\main.o: E:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demos\widgets\.
 new folder\main.o: E:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demos\widgets\../benchmark/lv_demo_benchmark.h
 new folder\main.o: E:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demos\widgets\../benchmark/../lv_demos.h
 new folder\main.o: E:\software\kevil5\kevil MDK-ARM v5.31\ARM\ARMCC\Bin\..\include\stdio.h
+new folder\main.o: .\UI\ui.h
+new folder\main.o: .\UI\ui_helpers.h
+new folder\main.o: .\UI\ui.h
+new folder\main.o: .\UI\ui_events.h

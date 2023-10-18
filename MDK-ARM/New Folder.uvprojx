@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include;.\UI;..\UI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -552,6 +552,26 @@
               <FileName>system_stm32f7xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/system_stm32f7xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UI</GroupName>
+          <Files>
+            <File>
+              <FileName>ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_helpers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\ui_helpers.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_Screen1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\ui_Screen1.c</FilePath>
             </File>
           </Files>
         </Group>
