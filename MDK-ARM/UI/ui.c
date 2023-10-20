@@ -6,6 +6,7 @@
 #include "ui.h"
 #include "ui_helpers.h"
 
+
 ///////////////////// VARIABLES ////////////////////
 
 
@@ -13,7 +14,6 @@
 void ui_Screen1_screen_init(void);
 lv_obj_t *ui_Screen1;
 lv_obj_t *ui_Chart1;
-lv_obj_t *ui_Label1;
 lv_obj_t *ui____initial_actions0;
 
 ///////////////////// TEST LVGL SETTINGS ////////////////////
@@ -29,6 +29,7 @@ lv_obj_t *ui____initial_actions0;
 ///////////////////// FUNCTIONS ////////////////////
 
 ///////////////////// SCREENS ////////////////////
+//lv_chart_series_t* ui_Chart1_series_1 = lv_chart_add_series(ui_Chart1, lv_palette_main(LV_PALETTE_BLUE), LV_CHART_AXIS_SECONDARY_Y);
 
 void ui_init( void )
 {
@@ -40,13 +41,12 @@ ui____initial_actions0 = lv_obj_create(NULL);
 lv_disp_load_scr( ui_Screen1);
 }
 
+
+extern lv_chart_series_t* ui_Chart1_series_1 ;
+extern float voltage;
+
 void ui_refresh(void)
 {
-	//电压值
-	extern float voltage;
-
-	//加的线条
-	lv_chart_series_t *ser1 = lv_chart_add_series(ui_Chart1, lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
-	refresh_data(ui_Chart1,ser1,voltage);
-	
+	lv_chart_set_next_value(ui_Chart1, ui_Chart1_series_1, voltage);
+	lv_chart_refresh(ui_Chart1);
 }

@@ -18,7 +18,6 @@ extern "C" {
 void ui_Screen1_screen_init(void);
 extern lv_obj_t *ui_Screen1;
 extern lv_obj_t *ui_Chart1;
-extern lv_obj_t *ui_Label1;
 extern lv_obj_t *ui____initial_actions0;
 
 

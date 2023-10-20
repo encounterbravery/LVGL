@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include;.\UI;..\UI</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Drivers/CMSIS/Include;.\UI;..\UI;E:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -432,6 +432,11 @@
               <FileName>stm32f7xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>Maybe use.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Maybe use.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -52,7 +52,7 @@ uint16_t LCD_DISP_BUF0[480*272]={0};
 //ADC
 uint16_t adc_buffer[10];
 uint16_t adc_value;
-float voltage;
+float voltage = 2;
 
 //chart
 extern lv_obj_t *ui_Chart1;
@@ -79,6 +79,7 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 
 		adc_value = HAL_ADC_GetValue(&hadc3);//重要！！！！！adc_value要全局定义
 		voltage = adc_value / 4096.0 * 3.3 ;
+
 //		printf("%d",adc_value);
 }
 /* USER CODE BEGIN PFP */
@@ -87,11 +88,6 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-//int fputc(int ch,FILE *f)
-//{
-//    return ITM_SendChar(ch);
-//}
 
 /* USER CODE END 0 */
 
@@ -134,10 +130,6 @@ int main(void)
   lv_init();
   lv_port_disp_init();
 	ui_init();
-
-	
-//	lv_demo_widgets();
-//	lv_demo_benchmark();
 	
   /* USER CODE END 2 */
 
