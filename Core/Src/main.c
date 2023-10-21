@@ -52,7 +52,8 @@ uint16_t LCD_DISP_BUF0[480*272]={0};
 //ADC
 uint16_t adc_buffer[10];
 uint16_t adc_value;
-float voltage = 2;
+uint16_t adc_value_min = 0x0670;
+uint16_t adc_value_diff;
 
 //chart
 extern lv_obj_t *ui_Chart1;
@@ -78,7 +79,8 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 {
 
 		adc_value = HAL_ADC_GetValue(&hadc3);//重要！！！！！adc_value要全局定义
-		voltage = adc_value / 4096.0 * 3.3 ;
+
+		adc_value_diff = adc_value - adc_value_min ;
 
 //		printf("%d",adc_value);
 }

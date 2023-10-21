@@ -42,11 +42,17 @@ lv_disp_load_scr( ui_Screen1);
 }
 
 
+
+//Í¼±í¸üÐÂ
 extern lv_chart_series_t* ui_Chart1_series_1 ;
-extern float voltage;
+//extern float voltage;
+extern uint16_t adc_value;
+extern uint16_t adc_value_diff;
+uint16_t points;
 
 void ui_refresh(void)
 {
-	lv_chart_set_next_value(ui_Chart1, ui_Chart1_series_1, voltage);
+	points = adc_value_diff /10 ;
+	lv_chart_set_next_value(ui_Chart1, ui_Chart1_series_1, points);
 	lv_chart_refresh(ui_Chart1);
 }

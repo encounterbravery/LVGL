@@ -19,13 +19,13 @@ lv_obj_set_x( ui_Chart1, -60 );
 lv_obj_set_y( ui_Chart1, -10 );
 lv_obj_set_align( ui_Chart1, LV_ALIGN_CENTER );
 lv_chart_set_type( ui_Chart1, LV_CHART_TYPE_LINE);
-lv_chart_set_range( ui_Chart1, LV_CHART_AXIS_PRIMARY_Y, 0, 3);
+lv_chart_set_range( ui_Chart1, LV_CHART_AXIS_PRIMARY_Y, 0, 40);
 lv_chart_set_range( ui_Chart1, LV_CHART_AXIS_SECONDARY_Y, 0, 3);
-lv_chart_set_div_line_count( ui_Chart1, 3, 10);
-lv_chart_set_axis_tick( ui_Chart1, LV_CHART_AXIS_PRIMARY_X, 10, 5, 5, 2, true, 50);
-lv_chart_set_axis_tick( ui_Chart1, LV_CHART_AXIS_PRIMARY_Y, 10, 5, 4, 2, true, 50);
+lv_chart_set_div_line_count( ui_Chart1, 2, 10);
+lv_chart_set_axis_tick( ui_Chart1, LV_CHART_AXIS_PRIMARY_X, 20, 3, 4, 2, true, 50);
+lv_chart_set_axis_tick( ui_Chart1, LV_CHART_AXIS_PRIMARY_Y, 33, 3, 4, 3, true, 50);
 lv_chart_set_axis_tick( ui_Chart1, LV_CHART_AXIS_SECONDARY_Y, 10, 5, 4, 2, true, 25);
-ui_Chart1_series_1 = lv_chart_add_series(ui_Chart1, lv_palette_main(LV_PALETTE_BLUE), LV_CHART_AXIS_SECONDARY_Y);
+ui_Chart1_series_1 = lv_chart_add_series(ui_Chart1, lv_palette_main(LV_PALETTE_BLUE), LV_CHART_AXIS_PRIMARY_Y);
 static lv_coord_t ui_Chart1_series_1_array[] = { 0,0,0,0,0,0,0,0,0,0 };
 lv_chart_set_ext_y_array(ui_Chart1, ui_Chart1_series_1, ui_Chart1_series_1_array);
 
