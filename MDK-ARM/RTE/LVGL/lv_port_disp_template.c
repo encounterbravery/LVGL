@@ -5,7 +5,6 @@
 
 /*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
 #if 1
-
 /*********************
  *      INCLUDES
  *********************/
@@ -87,7 +86,7 @@ void lv_port_disp_init(void)
     static lv_color_t buf_1[MY_DISP_HOR_RES * 10];                          /*A buffer for 10 rows*/
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
 
-    /* Example for 2) */
+//    /* Example for 2) */
 //    static lv_disp_draw_buf_t draw_buf_dsc_2;
 //    static lv_color_t buf_2_1[MY_DISP_HOR_RES * 10];                        /*A buffer for 10 rows*/
 //    static lv_color_t buf_2_2[MY_DISP_HOR_RES * 10];                        /*An other buffer for 10 rows*/
@@ -162,7 +161,7 @@ void disp_disable_update(void)
  *'lv_disp_flush_ready()' has to be called when finished.*/
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
-		 extern uint16_t LCD_DISP_BUF0[480*272];
+		extern uint16_t LCD_DISP_BUF0[480*272];
     if(disp_flush_enabled) {
         /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
 
@@ -172,7 +171,7 @@ static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_colo
             for(x = area->x1; x <= area->x2; x++) {
                 /*Put a pixel to the display. For example:*/
                 /*put_px(x, y, *color_p)*/
-							LCD_DISP_BUF0[x+y*MY_DISP_HOR_RES]=*((uint16_t *)color_p++);
+								LCD_DISP_BUF0[x+y*MY_DISP_HOR_RES]=*((uint16_t *)color_p++);
 //                color_p++;
             }
         }

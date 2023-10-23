@@ -20,8 +20,11 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "i2c.h"
 #include "ltdc.h"
+#include "sai.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -30,10 +33,14 @@
 #include "lv_port_disp_template.h"
 #include "lv_demo_widgets.h"
 #include "lv_demo_benchmark.h"
+#include "lv_port_indev_template.h"
 #include "stdio.h"
 
 #include "ui.h"
 #include "ui_helpers.h"
+
+#include "math.h"
+#include "stm32746g_discovery_audio.h"
 
 
 /* USER CODE END Includes */
@@ -50,14 +57,20 @@ uint16_t color=0x001f;
 uint16_t LCD_DISP_BUF0[480*272]={0};
 
 //ADC
-uint16_t adc_buffer[10];
+uint16_t adc_buffer[100] = {0};
 uint16_t adc_value;
 uint16_t adc_value_min = 0x0670;
 uint16_t adc_value_diff;
+uint8_t ADCFlag = 0;
 
-//chart
-extern lv_obj_t *ui_Chart1;
-extern lv_obj_t *ui_Label1;
+
+//audio
+#define BUFSIZE 128
+//float pi = 3.1415926;								//音频输入时的pi
+static int16_t audio_input[BUFSIZE*2];//双声道数据
+lv_coord_t array[BUFSIZE];   					//只显示左声道
+uint8_t dispalyFlag = 0;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -73,7 +86,7 @@ extern lv_obj_t *ui_Label1;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-//static void MPU_Config(void);
+void PeriphCommonClock_Config(void);
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 {
@@ -84,6 +97,19 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc)
 
 //		printf("%d",adc_value);
 }
+
+void BSP_AUDIO_IN_TransferComplete_CallBack()//输入缓冲区采集完成的回调函数
+{
+		if(dispalyFlag)
+		{
+				for(int i = 0; i< BUFSIZE; i++)
+			  {
+					array[i] = audio_input[i*2];
+			  }
+				dispalyFlag = 0;
+		}
+}	
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -115,6 +141,9 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 
+/* Configure the peripherals common clocks */
+  PeriphCommonClock_Config();
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -125,14 +154,35 @@ int main(void)
   MX_ADC3_Init();
   MX_TIM2_Init();
   MX_LTDC_Init();
+  MX_I2C3_Init();
+  MX_USART1_UART_Init();
+  MX_SAI2_Init();
   /* USER CODE BEGIN 2 */
 	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
 	HAL_ADC_Start_DMA(&hadc3, (uint32_t*) adc_buffer,10);
-	
-  lv_init();
+
+  
+	lv_init();
   lv_port_disp_init();
+//	lv_port_indev_init();
 	ui_init();
 	
+//	BSP_AUDIO_IN_Init(SAI_AUDIO_FREQUENCY_16K, DEFAULT_AUDIO_IN_BIT_RESOLUTION, 1);  
+//	BSP_AUDIO_IN_Record((uint16_t*)audio_input, BUFSIZE*2);
+//	
+	
+	
+	
+// 音频输入实验	
+//	for(int i=0; i<BUFSIZE; i++)
+//	{
+//		audio_input[i*2]=16384*sin(2*pi/32.0*i);				//左声道16KSPS,500Hz正弦波
+//		audio_input[i*2+1]=audio_input[i*2];						//右声道16KSPS,500Hz正弦波
+//		BSP_AUDIO_OUT_Init(OUTPUT_DEVICE_HEADPHONE, 70, SAI_AUDIO_FREQUENCY_16K);
+//		BSP_AUDIO_OUT_SetAudioFrameSlot(CODEC_AUDIOFRAME_SLOT_02);				//左右声道一起输出
+//		BSP_AUDIO_OUT_Play((uint16_t*)audio_input,BUFSIZE*2);							//选择输出缓冲区，size单位为字节
+//	}
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -144,7 +194,13 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		HAL_Delay(1);
 		lv_task_handler();
-		ui_refresh();
+//		ui_refresh();
+
+		if(dispalyFlag == 0)
+		{
+				lv_chart_refresh(ui_Chart2);
+		}
+
   }
   /* USER CODE END 3 */
 }
@@ -196,6 +252,29 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_7) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief Peripherals Common Clock Configuration
+  * @retval None
+  */
+void PeriphCommonClock_Config(void)
+{
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+
+  /** Initializes the peripherals clock
+  */
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SAI2;
+  PeriphClkInitStruct.PLLI2S.PLLI2SN = 344;
+  PeriphClkInitStruct.PLLI2S.PLLI2SP = RCC_PLLP_DIV2;
+  PeriphClkInitStruct.PLLI2S.PLLI2SR = 2;
+  PeriphClkInitStruct.PLLI2S.PLLI2SQ = 7;
+  PeriphClkInitStruct.PLLI2SDivQ = 1;
+  PeriphClkInitStruct.Sai2ClockSelection = RCC_SAI2CLKSOURCE_PLLI2S;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
   }

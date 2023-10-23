@@ -79,10 +79,11 @@ void MX_LTDC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN LTDC_Init 2 */
-	//把地址赋值给buffer，这很重要
+	//地址->buffer，重要!!!!!
 	extern uint16_t LCD_DISP_BUF0[480*272];
 	pLayerCfg.FBStartAdress = (uint32_t)LCD_DISP_BUF0;
-	  if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg, 0) != HAL_OK)
+	
+	if (HAL_LTDC_ConfigLayer(&hltdc, &pLayerCfg, 0) != HAL_OK)
   {
     Error_Handler();
   }

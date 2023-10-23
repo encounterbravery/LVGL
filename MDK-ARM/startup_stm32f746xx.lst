@@ -922,15 +922,16 @@ ARM Macro Assembler    Page 15
               00000800 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.sp --apcs=
-interwork --depend="new folder\startup_stm32f746xx.d" -o"new folder\startup_stm
-32f746xx.o" -I.\RTE\LVGL -I.\RTE\_New_Folder -IE:\software\kevil5\kevil-Pack\AR
-M\CMSIS\5.7.0\CMSIS\Core\Include -IE:\software\kevil5\kevil-Pack\Keil\STM32F7xx
-_DFP\2.15.2\Drivers\CMSIS\Device\ST\STM32F7xx\Include -IE:\software\kevil5\kevi
-l-Pack\LVGL\lvgl\1.0.6 -IE:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demos\be
-nchmark -IE:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demos\widgets --predefi
-ne="__UVISION_VERSION SETA 531" --predefine="_RTE_ SETA 1" --predefine="STM32F7
-46xx SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f746xx.lst startup_
-stm32f746xx.s
+interwork --depend=newfolder\startup_stm32f746xx.d -onewfolder\startup_stm32f74
+6xx.o -I.\RTE\LVGL -I.\RTE\_NewFolder -IE:\software\kevil5\kevil-Pack\ARM\CMSIS
+\5.7.0\CMSIS\Core\Include -IE:\software\kevil5\kevil-Pack\Keil\STM32F7xx_DFP\2.
+15.2\Drivers\BSP\STM32746G-Discovery -IE:\software\kevil5\kevil-Pack\Keil\STM32
+F7xx_DFP\2.15.2\Drivers\CMSIS\Device\ST\STM32F7xx\Include -IE:\software\kevil5\
+kevil-Pack\LVGL\lvgl\1.0.6 -IE:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demo
+s\benchmark -IE:\software\kevil5\kevil-Pack\LVGL\lvgl\1.0.6\demos\widgets --pre
+define="__UVISION_VERSION SETA 531" --predefine="_RTE_ SETA 1" --predefine="STM
+32F746xx SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f746xx.lst star
+tup_stm32f746xx.s
 
 
 
